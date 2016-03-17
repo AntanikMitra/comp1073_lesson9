@@ -10,8 +10,16 @@
     request.open('GET', '../person.txt', true);
     request.addEventListener('readystatechange', function() {
         if (request.readyState === 4) {
-            var Person = {}; /* var Person = new Object();   */
-
+            
+            var addressBook = [];/*var addressBook = new Array(); */
+            
+            addressBook = JSON.parse(request.responseText);
+            console.log(addressBook);
+          
+            
+          //  var Person = {}; /* var Person = new Object();   */
+            
+           /* 
             Person = JSON.parse(request.responseText);
             
             Person.sayHello = function() {
@@ -44,7 +52,7 @@
             } // for in
 
             firstParagraph.innerHTML = output;
-        }
+        } */
     });
 
     request.send();
